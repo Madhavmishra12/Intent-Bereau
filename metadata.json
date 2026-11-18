@@ -1,0 +1,6 @@
+{
+  "name": "Intent Bureau",
+  "description": "Intent Bureau helps premium businesses turn ad clicks into sales conversations through paid media, AI-assisted creative and lead follow-up.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
