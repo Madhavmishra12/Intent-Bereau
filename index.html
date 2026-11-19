@@ -20,6 +20,21 @@
     />
   </head>
   <body class="bg-[#f3f3ec] text-[#15201b] antialiased">
+    <form
+      name="discovery-call"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      aria-hidden="true"
+      style="position:absolute;left:-100vw;top:auto;width:1px;height:1px;overflow:hidden"
+    >
+      <input type="hidden" name="form-name" value="discovery-call" />
+      <p><label>Leave this field empty: <input name="bot-field" /></label></p>
+      <label>Your name <input name="name" /></label>
+      <label>Work email <input type="email" name="email" /></label>
+      <label>Company or project <input name="business" /></label>
+      <label>What would you like to build? <textarea name="message"></textarea></label>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

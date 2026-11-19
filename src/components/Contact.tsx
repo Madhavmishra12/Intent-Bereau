@@ -62,25 +62,36 @@ export function Contact() {
     setIsSubmitting(true);
     setErrors({});
     try {
-      const response = await fetch('/api/discovery-call', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: values.name.trim(),
-          email: values.email.trim(),
-          business: values.business.trim(),
-          message: values.message.trim(),
-        }),
-      });
-      const data = (await response.json().catch(() => null)) as { ok?: boolean; error?: string; fieldErrors?: FormErrors } | null;
-      if (!response.ok || !data?.ok) {
-        setErrors({ ...(data?.fieldErrors ?? {}), general: data?.error ?? `Your request could not be delivered. Email ${CONTACT_EMAIL} directly.` });
-        return;
+      const submission = {
+        name: values.name.trim(),
+        email: values.email.trim(),
+        business: values.business.trim(),
+        message: values.message.trim(),
+      };
+
+      if (import.meta.env.VITE_CONTACT_PROVIDER === 'netlify') {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ 'form-name': 'discovery-call', 'bot-field': '', ...submission }).toString(),
+        });
+        if (!response.ok) throw new Error('Netlify Forms submission failed.');
+      } else {
+        const response = await fetch('/api/discovery-call', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(submission),
+        });
+        const data = (await response.json().catch(() => null)) as { ok?: boolean; error?: string; fieldErrors?: FormErrors } | null;
+        if (!response.ok || !data?.ok) {
+          setErrors({ ...(data?.fieldErrors ?? {}), general: data?.error ?? `Your request could not be delivered. Email ${CONTACT_EMAIL} directly.` });
+          return;
+        }
       }
       setSubmittedDetails({ name: values.name.trim(), email: values.email.trim() });
       setValues(INITIAL_VALUES);
     } catch {
-      setErrors({ general: `Network error. Please try again or email ${CONTACT_EMAIL} directly.` });
+      setErrors({ general: `Your request could not be sent. Please try again or email ${CONTACT_EMAIL} directly.` });
     } finally {
       setIsSubmitting(false);
     }
@@ -110,7 +121,9 @@ export function Contact() {
               <button type="button" onClick={() => setSubmittedDetails(null)} className="text-link mt-6">Send another message <ArrowUpRight size={15} /></button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} noValidate className="contact-form">
+            <form name="discovery-call" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit} noValidate className="contact-form">
+              <input type="hidden" name="form-name" value="discovery-call" />
+              <p className="sr-only" aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
               <div className="form-heading"><div><span className="form-kicker">PROJECT ENQUIRY</span><h3>Tell us a little about it.</h3></div><span className="form-step">01 <i>/ 01</i></span></div>
 
               {errors.general && <div role="alert" className="form-alert"><AlertCircle size={18} aria-hidden="true" /><div><p>{errors.general}</p><a href={`mailto:${CONTACT_EMAIL}`}>Email us directly</a></div></div>}
