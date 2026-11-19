@@ -117,7 +117,7 @@ export function Services() {
   return (
     <section id="services" className="services-section section-pad">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        <div className="section-heading-row">
+        <div className="section-heading-row" data-reveal>
           <div className="max-w-2xl">
             <div className="eyebrow"><span className="eyebrow-line" /> What we make</div>
             <h2 className="section-title mt-5">Technology that feels<br className="hidden sm:block" /> like <span className="text-accent">your unfair advantage.</span></h2>
@@ -129,7 +129,7 @@ export function Services() {
           {SERVICES.map((service) => {
             const Icon = service.icon;
             return (
-              <article key={service.number} className="service-card group">
+              <article key={service.number} className="service-card group" data-reveal>
                 <div className="flex items-start justify-between gap-4">
                   <span className={`service-icon icon-${service.tone}`}><Icon size={22} strokeWidth={1.8} aria-hidden="true" /></span>
                   <span className="service-number">{service.number}</span>
@@ -144,7 +144,7 @@ export function Services() {
           })}
         </div>
 
-        <section className="marketing-feature mt-8" aria-labelledby="marketing-feature-title">
+        <section className="marketing-feature mt-8" aria-labelledby="marketing-feature-title" data-reveal>
           <div className="marketing-feature-copy">
             <div className="eyebrow"><span className="eyebrow-line" /> Digital marketing, built around growth</div>
             <h3 id="marketing-feature-title">Make every<br />touchpoint count.</h3>
@@ -158,13 +158,13 @@ export function Services() {
           </div>
         </section>
 
-        <div className="services-note mt-7">
+        <div className="services-note mt-7" data-reveal>
           <span className="note-spark">✳</span>
           <p><b>Have a different idea?</b> We shape the right mix of technology around the problem you need to solve.</p>
           <a href="#contact" aria-label="Talk to us about your idea"><ArrowUpRight size={18} /></a>
         </div>
 
-        <div className="capability-bar mt-14">
+        <div className="capability-bar mt-14" data-reveal>
           <div>
             <div className="eyebrow"><span className="eyebrow-line" /> Product capabilities</div>
             <p>All the pieces behind a complete product.</p>

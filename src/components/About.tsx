@@ -31,7 +31,7 @@ export function About() {
     <>
       <section id="approach" className="approach-section section-pad">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-          <div className="section-heading-row approach-heading">
+          <div className="section-heading-row approach-heading" data-reveal>
             <div className="max-w-2xl">
               <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> How we work</div>
               <h2 className="section-title section-title-light mt-5">One clear path<br />from <span>idea to impact.</span></h2>
@@ -43,7 +43,7 @@ export function About() {
             {STEPS.map((step) => {
               const Icon = step.icon;
               return (
-                <article key={step.number} className="approach-card">
+                <article key={step.number} className="approach-card" data-reveal>
                   <div className="approach-card-top"><span>{step.number}</span><Icon size={22} strokeWidth={1.6} aria-hidden="true" /></div>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
@@ -57,11 +57,11 @@ export function About() {
 
       <section id="about" className="about-section">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20 lg:px-12">
-          <div>
+          <div data-reveal>
             <div className="eyebrow"><span className="eyebrow-line" /> A little about us</div>
             <h2 className="about-title mt-5">Small details.<br /><span>Big-picture thinking.</span></h2>
           </div>
-          <div>
+          <div data-reveal>
             <p className="about-copy">Intent Bureau is a digital product studio based in New Delhi. We bring creative direction, thoughtful technology, and practical business sense together to make digital experiences that move things forward.</p>
             <div className="about-meta mt-7">
               <div><span className="meta-label">Based in</span><b>New Delhi, India</b></div>

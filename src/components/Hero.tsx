@@ -67,7 +67,12 @@ export function Hero() {
 
       <div className="hero-bottom mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 px-5 py-5 sm:px-8 lg:px-12">
         <p>One partner for every digital layer</p>
-        <div className="hero-capabilities"><span>PRODUCT DESIGN</span><i /> <span>ENGINEERING</span><i /> <span>AI & AUTOMATION</span><i /> <span>HOSTING & CARE</span></div>
+        <div className="hero-capabilities" role="group" aria-label="Product design, engineering, AI and automation, hosting and care">
+          <div className="hero-capabilities-track" aria-hidden="true">
+            <div className="hero-capabilities-group"><span>PRODUCT DESIGN</span><i /><span>ENGINEERING</span><i /><span>AI & AUTOMATION</span><i /><span>HOSTING & CARE</span><i /></div>
+            <div className="hero-capabilities-group"><span>PRODUCT DESIGN</span><i /><span>ENGINEERING</span><i /><span>AI & AUTOMATION</span><i /><span>HOSTING & CARE</span><i /></div>
+          </div>
+        </div>
       </div>
     </section>
   );

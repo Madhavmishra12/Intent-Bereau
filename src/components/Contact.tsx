@@ -100,7 +100,7 @@ export function Contact() {
   return (
     <section id="contact" className="contact-section section-pad">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[.82fr_1.18fr] lg:items-start lg:gap-20 lg:px-12">
-        <div className="contact-copy">
+        <div className="contact-copy" data-reveal>
           <div className="eyebrow eyebrow-light"><span className="eyebrow-line" /> Your next chapter starts here</div>
           <h2 className="section-title section-title-light mt-5">Let’s make<br /><span>something matter.</span></h2>
           <p className="mt-6 max-w-md text-base leading-7 text-white/65 sm:text-lg">Tell us what you have in mind. Whether it’s an app, an AI idea, or a whole new digital experience, we’d love to hear about it.</p>
@@ -112,7 +112,7 @@ export function Contact() {
           <div className="contact-location mt-8"><span className="status-dot" /> New Delhi, India <span className="contact-dot-sep">·</span> Working everywhere</div>
         </div>
 
-        <div className="contact-form-card">
+        <div className="contact-form-card" data-reveal>
           {submittedDetails ? (
             <div role="status" aria-live="polite" className="success-state">
               <span className="success-icon"><CheckCircle2 size={26} aria-hidden="true" /></span>
