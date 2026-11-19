@@ -7,8 +7,8 @@ import {
   Cloud,
   Code2,
   Globe,
-  Map,
   Megaphone,
+  Newspaper,
   Sparkles,
   Smartphone,
   Workflow,
@@ -74,30 +74,37 @@ const SERVICES = [
   },
   {
     number: '09',
-    title: 'Paid media & growth',
-    description: 'Plan and manage Meta and Google campaigns, landing pages, and follow-up around the enquiries that matter.',
-    icon: Megaphone,
-    tone: 'peach',
-  },
-  {
-    number: '10',
-    title: 'Social media & content',
-    description: 'Content calendars, creative production, publishing, community management, and influencer campaigns.',
+    title: 'Social Media (End to End)',
+    description: 'From concept to creation to execution, we plan, make, and manage social content around your brand.',
     icon: Sparkles,
     tone: 'lavender',
   },
   {
-    number: '11',
-    title: 'Brand, PR & production',
-    description: 'Brand shoots, campaign films, and press releases that give your launches and announcements a clear voice.',
+    number: '10',
+    title: 'Brand Shoots',
+    description: 'Photography and video that give your brand a distinct, consistent presence across every channel.',
     icon: Camera,
+    tone: 'peach',
+  },
+  {
+    number: '11',
+    title: 'Performance Marketing',
+    description: 'Paid campaigns built to reach the right people, make every rupee work harder, and drive enquiries.',
+    icon: Megaphone,
     tone: 'blue',
   },
   {
     number: '12',
-    title: 'Interactive property maps',
-    description: 'Explore project phases, amenities, and locations through interactive real estate maps built to invite enquiries.',
-    icon: Map,
+    title: 'Press Releases',
+    description: 'Clear, newsworthy announcements shaped for your launch, milestone, or next big story.',
+    icon: Newspaper,
+    tone: 'peach',
+  },
+  {
+    number: '13',
+    title: 'AI Automation',
+    description: 'AI tools and business transformation through practical, automated workflows that simplify how your team works.',
+    icon: Bot,
     tone: 'lime',
   },
 ];
@@ -146,7 +153,7 @@ export function Services() {
 
         <section className="marketing-feature mt-8" aria-labelledby="marketing-feature-title" data-reveal>
           <div className="marketing-feature-copy">
-            <div className="eyebrow"><span className="eyebrow-line" /> Digital marketing, built around growth</div>
+            <div className="eyebrow"><span className="eyebrow-line" /> Creative, media, and growth</div>
             <h3 id="marketing-feature-title">Make every<br />touchpoint count.</h3>
             <p>Bring strategy, creative, media, and follow-up together. From the first campaign idea to the conversation that closes the loop.</p>
             <div className="marketing-pills"><span>Paid ads</span><span>Social content</span><span>Brand shoots</span><span>PR & launches</span></div>

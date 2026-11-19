@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: 'Services', href: '#services' },
   { label: 'Our approach', href: '#approach' },
   { label: 'About', href: '#about' },
+  { label: 'Clientele', href: '#clientele' },
 ];
 
 export function Header() {

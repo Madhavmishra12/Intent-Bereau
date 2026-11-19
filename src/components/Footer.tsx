@@ -11,7 +11,7 @@ export function Footer() {
           <span className="brand-name">intent<span>bureau</span></span>
         </a>
         <nav aria-label="Footer navigation" className="footer-links">
-          <a href="#services">Services</a><a href="#approach">Approach</a><a href="#about">About</a>
+          <a href="#services">Services</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#clientele">Clientele</a>
           <a href={`mailto:${CONTACT_EMAIL}`}>Email us <ArrowUpRight size={13} /></a>
         </nav>
         <p className="footer-copyright">© {new Date().getFullYear()} Intent Bureau. Made with intent.</p>

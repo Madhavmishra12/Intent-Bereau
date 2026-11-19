@@ -62,7 +62,7 @@ export function About() {
             <h2 className="about-title mt-5">Small details.<br /><span>Big-picture thinking.</span></h2>
           </div>
           <div data-reveal>
-            <p className="about-copy">Intent Bureau is a digital product studio based in New Delhi. We bring creative direction, thoughtful technology, and practical business sense together to make digital experiences that move things forward.</p>
+            <p className="about-copy">Intent Bureau is an AI-powered creative tech agency based in India. We bring creative direction, thoughtful technology, and practical business sense together to build websites, manage social content, and turn campaigns into enquiries.</p>
             <div className="about-meta mt-7">
               <div><span className="meta-label">Based in</span><b>New Delhi, India</b></div>
               <div><span className="meta-label">Working across</span><div className="industry-tags">{INDUSTRIES.map((industry) => <span key={industry}>{industry}</span>)}</div></div>

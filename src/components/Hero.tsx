@@ -7,13 +7,13 @@ export function Hero() {
       <div className="hero-grain" aria-hidden="true" />
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-20 lg:grid-cols-[0.88fr_1.12fr] lg:gap-10 lg:px-12 lg:pb-24 lg:pt-24">
         <div className="relative z-10 max-w-2xl" data-reveal>
-          <div className="eyebrow eyebrow-light"><span className="status-dot" /> Independent digital product studio</div>
+          <div className="eyebrow eyebrow-light"><span className="status-dot" /> AI-powered creative tech agency</div>
           <h1 className="hero-title mt-7">
             Big ideas,<br />
             <span className="hero-title-accent">beautifully</span> built.
           </h1>
           <p className="hero-copy mt-6 max-w-xl">
-            We design and build the digital products behind your next big move — from mobile and web apps to AI agents, immersive 3D, and the infrastructure that keeps it all running.
+            We are an AI-powered creative tech agency based in India. We build websites, create and manage social content, and run paid campaigns that turn attention into enquiries.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a href="#contact" className="button button-lime">
