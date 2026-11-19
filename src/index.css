@@ -469,3 +469,112 @@
 @media (max-width: 767px) {
   .marketing-feature-art::before { background: linear-gradient(180deg, var(--warm-cream), transparent); }
 }
+
+/* Scrolltide-inspired depth and motion, drawn with Intent Bureau's own forms. */
+.hero-section,
+.services-section,
+.approach-section,
+.about-section,
+.clientele-section,
+.contact-section {
+  perspective: 1400px;
+  perspective-origin: 50% 35%;
+}
+
+[data-reveal] {
+  opacity: 0;
+  translate: 0 30px;
+  rotate: x 5deg;
+  scale: .975;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition:
+    opacity .78s cubic-bezier(.2,.7,.2,1),
+    translate .78s cubic-bezier(.2,.7,.2,1),
+    rotate .78s cubic-bezier(.2,.7,.2,1),
+    scale .78s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, translate, rotate, scale;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  translate: 0 0;
+  rotate: x 0deg;
+  scale: 1;
+}
+
+.motion-tilt {
+  position: relative;
+  transform: perspective(1100px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transform-style: preserve-3d;
+  transition: transform .22s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+  will-change: transform;
+}
+
+.motion-tilt::after {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(340px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(255,255,255,.25), transparent 68%);
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+
+.motion-tilt.is-tilting::after { opacity: .72; }
+.motion-tilt.is-tilting { z-index: 2; }
+.hero-art.motion-tilt { transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); }
+.service-card.motion-tilt { transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(var(--hover-lift, 0px)); }
+.approach-card.motion-tilt { transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(var(--hover-lift, 0px)); }
+.client-logo-card.motion-tilt { transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(var(--hover-lift, 0px)); }
+.service-card:hover.motion-tilt { --hover-lift: -5px; }
+.approach-card:hover.motion-tilt { --hover-lift: -3px; }
+.client-logo-card:hover.motion-tilt { --hover-lift: -4px; }
+.service-card.motion-tilt > *,
+.approach-card.motion-tilt > *,
+.client-logo-card.motion-tilt > * { transform: translateZ(12px); }
+.service-card.motion-tilt .service-icon { transition: transform .3s cubic-bezier(.2,.7,.2,1); }
+.service-card.motion-tilt:hover .service-icon { transform: translateZ(28px) rotate(-8deg); }
+.approach-card.motion-tilt .approach-card-top svg { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+.approach-card.motion-tilt:hover .approach-card-top svg { transform: translateZ(24px) rotate(-12deg); }
+.client-logo-card.motion-tilt img { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+.client-logo-card.motion-tilt:hover img { transform: translateZ(22px) scale(1.035); }
+.marketing-feature.motion-tilt,
+.contact-form-card.motion-tilt { transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); }
+
+.hero-art.motion-tilt .art-core { translate: 0 0 18px; }
+.hero-art.motion-tilt .floating-card { translate: 0 0 28px; }
+.hero-art.motion-tilt .phone-card { translate: 0 0 34px; }
+.hero-art.motion-tilt .floating-tag { transform: translateZ(40px); }
+.hero-art.motion-tilt .orbit-one { transform: translate(-50%, -50%) rotate(-31deg) translateZ(9px); }
+.hero-art.motion-tilt .orbit-two { transform: translate(-50%, -50%) rotate(45deg) translateZ(4px); }
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card,
+  .approach-card,
+  .client-logo-card { transform-style: preserve-3d; }
+}
+
+@media (max-width: 767px) {
+  [data-reveal] { translate: 0 18px; rotate: x 2deg; scale: .99; }
+  .motion-tilt::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; translate: none; rotate: none; scale: 1; will-change: auto; }
+  .motion-tilt,
+  .hero-art.motion-tilt,
+  .service-card.motion-tilt,
+  .approach-card.motion-tilt,
+  .client-logo-card.motion-tilt,
+  .marketing-feature.motion-tilt,
+  .contact-form-card.motion-tilt { transform: none; transition: none; will-change: auto; }
+  .motion-tilt::after { display: none; }
+  .hero-art.motion-tilt .art-core,
+  .hero-art.motion-tilt .floating-card,
+  .hero-art.motion-tilt .phone-card,
+  .hero-art.motion-tilt .floating-tag { translate: none; }
+}
