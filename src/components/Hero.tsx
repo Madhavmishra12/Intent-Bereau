@@ -1,5 +1,6 @@
-import { ArrowDown, ArrowUpRight, AudioLines, Bot, Code2, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { BrandGlyph } from './BrandGlyph';
+import { NeuralField } from './NeuralField';
 
 export function Hero() {
   return (
@@ -29,39 +30,15 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hero-art" aria-label="A preview of connected digital products, AI, and app interfaces" role="img" data-reveal>
-          <div className="art-grid" aria-hidden="true" />
-          <div className="art-orbit orbit-one" aria-hidden="true" />
-          <div className="art-orbit orbit-two" aria-hidden="true" />
-          <div className="art-glow" aria-hidden="true" />
-          <div className="art-core" aria-hidden="true"><span>ib</span><i /></div>
-
-          <div className="floating-card app-card">
-            <div className="mini-window-top"><span /><span /><span /><b>orbit / dashboard</b></div>
-            <div className="mini-window-content">
-              <div className="mini-sidebar"><i /><i /><i /><i /></div>
-              <div className="mini-dashboard">
-                <div className="mini-greeting"><b>Good morning, Alex</b><small>Your workspace at a glance</small></div>
-                <div className="mini-stats"><span><small>Active users</small><b>12,480 <em>↗ 18%</em></b></span><span><small>Conversion</small><b>8.42%</b></span></div>
-                <div className="chart-wrap"><div className="chart-label"><b>Product activity</b><small>Last 7 days</small></div><svg viewBox="0 0 320 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70 C28 61 30 75 60 53 S91 63 121 40 S159 58 184 34 S225 41 248 22 S282 40 320 8" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/><path d="M0 70 C28 61 30 75 60 53 S91 63 121 40 S159 58 184 34 S225 41 248 22 S282 40 320 8 V90 H0Z" fill="url(#chartFill)" opacity=".16"/><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop stopColor="var(--gold)"/><stop offset="1" stopColor="var(--gold)" stopOpacity="0"/></linearGradient></defs></svg></div>
-              </div>
-            </div>
+        <div className="hero-art neural-scene" aria-label="An animated 3D field of connected particles centered around a bright four-point Intent Bureau spark" role="img" data-reveal>
+          <NeuralField />
+          <div className="neural-label" aria-hidden="true"><span className="neural-live-dot" /> INTENT FIELD <i>/</i> 001</div>
+          <div className="neural-metrics" aria-hidden="true">
+            <span><b>13</b><small>CAPABILITIES</small></span>
+            <span><b>05</b><small>CLIENT PARTNERS</small></span>
+            <span><b>01</b><small>CONNECTED TEAM</small></span>
           </div>
-
-          <div className="floating-card phone-card" aria-hidden="true">
-            <div className="phone-notch" />
-            <div className="phone-screen">
-              <div className="phone-topline"><span>9:41</span><span>● ● ●</span></div>
-              <div className="phone-orb"><Sparkles size={23} /></div>
-              <b>Your day,<br />in flow.</b>
-              <small>Everything important,<br />all in one place.</small>
-              <div className="phone-action">Open workspace <ArrowUpRight size={12} /></div>
-            </div>
-          </div>
-
-          <div className="floating-tag tag-ai"><span className="tag-icon"><Bot size={15} /></span><span><b>AI agent</b><small>Ready to help</small></span><i /></div>
-          <div className="floating-tag tag-voice"><span className="tag-icon tag-icon-teal"><AudioLines size={15} /></span><span><b>Voice AI</b><small>Always listening</small></span><i /></div>
-          <div className="art-caption"><Code2 size={14} aria-hidden="true" /> Thoughtfully connected, end to end</div>
+          <div className="art-caption"><span className="neural-caption-mark">✳</span> Creative intelligence, in motion</div>
         </div>
       </div>
 

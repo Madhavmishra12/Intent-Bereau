@@ -578,3 +578,76 @@
   .hero-art.motion-tilt .phone-card,
   .hero-art.motion-tilt .floating-tag { translate: none; }
 }
+
+/* Neural field hero: a live, pointer-aware particle space in the brand palette. */
+.neural-scene {
+  background:
+    radial-gradient(ellipse at 51% 48%, rgba(112, 38, 54, .58), transparent 47%),
+    radial-gradient(ellipse at 50% 54%, #40151e 0%, #260e13 57%, #19090c 100%);
+}
+.neural-field-canvas {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+.neural-label {
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+  left: 21px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(247, 243, 238, .13);
+  border-radius: 999px;
+  color: rgba(247, 243, 238, .78);
+  background: rgba(25, 9, 12, .35);
+  font: 600 9px/1 var(--font-sans);
+  letter-spacing: .13em;
+  backdrop-filter: blur(8px);
+}
+.neural-label i { color: rgba(247, 243, 238, .36); font-style: normal; }
+.neural-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e5c1b4;
+  box-shadow: 0 0 0 4px rgba(229, 193, 180, .12), 0 0 13px rgba(229, 193, 180, .8);
+  animation: neural-pulse 2.6s ease-in-out infinite;
+}
+.neural-metrics {
+  position: absolute;
+  z-index: 3;
+  top: 24%;
+  right: 22px;
+  display: grid;
+  gap: 22px;
+  text-align: right;
+}
+.neural-metrics span { display: flex; flex-direction: column; gap: 4px; }
+.neural-metrics b { color: rgba(247, 243, 238, .86); font: 500 23px/.95 var(--font-display); letter-spacing: -.06em; }
+.neural-metrics small { color: rgba(247, 243, 238, .43); font-size: 7px; font-weight: 700; letter-spacing: .13em; }
+.neural-scene .art-caption { z-index: 3; right: 19px; bottom: 17px; color: rgba(247, 243, 238, .62); }
+.neural-caption-mark { color: #e5c1b4; font-size: 15px; }
+@keyframes neural-pulse { 0%,100% { opacity: .68; scale: .88; } 50% { opacity: 1; scale: 1.08; } }
+
+@media (max-width: 767px) {
+  .neural-label { top: 14px; left: 14px; font-size: 8px; }
+  .neural-metrics { top: auto; right: 14px; bottom: 43px; gap: 12px; }
+  .neural-metrics b { font-size: 18px; }
+  .neural-metrics small { font-size: 6px; }
+  .neural-scene .art-caption { right: auto; left: 14px; bottom: 14px; font-size: 7px; }
+}
+@media (max-width: 390px) {
+  .neural-metrics { gap: 8px; }
+  .neural-metrics b { font-size: 15px; }
+  .neural-metrics small { font-size: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .neural-live-dot { animation: none; }
+}
