@@ -6,7 +6,7 @@ export function Hero() {
     <section id="top" className="hero-section">
       <div className="hero-grain" aria-hidden="true" />
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-20 lg:grid-cols-[0.88fr_1.12fr] lg:gap-10 lg:px-12 lg:pb-24 lg:pt-24">
-        <div className="relative z-10 max-w-2xl">
+        <div className="relative z-10 max-w-2xl" data-reveal>
           <div className="eyebrow eyebrow-light"><span className="status-dot" /> Independent digital product studio</div>
           <h1 className="hero-title mt-7">
             Big ideas,<br />
@@ -29,7 +29,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hero-art" aria-label="A preview of connected digital products, AI, and app interfaces" role="img">
+        <div className="hero-art" aria-label="A preview of connected digital products, AI, and app interfaces" role="img" data-reveal>
           <div className="art-grid" aria-hidden="true" />
           <div className="art-orbit orbit-one" aria-hidden="true" />
           <div className="art-orbit orbit-two" aria-hidden="true" />

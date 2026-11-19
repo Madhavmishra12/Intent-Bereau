@@ -358,6 +358,19 @@
   [data-reveal] { opacity: 1; translate: none; transition: none; }
   .hero-capabilities-track { animation: none; }
 }
+.hero-title-accent {
+  color: var(--gold-light);
+  background: linear-gradient(105deg, var(--gold-light) 12%, #fff1c7 36%, var(--gold-light) 58%, #c49d50 78%, var(--gold-light) 94%);
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gold-sheen 7s ease-in-out infinite alternate;
+}
+@keyframes gold-sheen { to { background-position: 100% center; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-accent { color: var(--gold-light); background: none; -webkit-text-fill-color: currentColor; animation: none; }
+}
 
 @media (max-width: 767px) {
   .marketing-feature-art::before { background: linear-gradient(180deg, #211e17, transparent); }
